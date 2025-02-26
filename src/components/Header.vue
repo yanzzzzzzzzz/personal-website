@@ -16,34 +16,34 @@
 
 <style scoped>
 header {
-  background-color: #f8f9fa; /* 淺灰背景 */
-  padding: 1rem; /* 內距 */
-  position: sticky; /* 固定在頂部 */
+  background-color: #f8f9fa;
+  padding: 1rem;
+  position: sticky;
   top: 0;
-  z-index: 1000; /* 確保在最上層 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
   display: flex;
-  justify-content: center; /* 置中排列 */
-  gap: 2rem; /* 每個連結間距 */
+  justify-content: center;
+  gap: 2rem;
 }
 
 .nav-item {
-  text-decoration: none; /* 移除底線 */
-  color: #333; /* 文字顏色 */
-  font-weight: 500; /* 字體粗細 */
-  font-size: 1.1rem; /* 字體大小 */
-  transition: color 0.3s; /* 顏色過渡效果 */
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 .nav-item:hover {
-  color: #007bff; /* 滑鼠懸停時變藍 */
+  color: #007bff;
 }
 
 .router-link-active {
-  color: #007bff; /* 當前頁面連結高亮 */
-  border-bottom: 2px solid #007bff; /* 底線標示 */
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
 }
 </style>
