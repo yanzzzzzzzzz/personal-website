@@ -21,9 +21,9 @@
       <div class="right">
         <img src="https://avatars.githubusercontent.com/u/22338002?v=4" alt="Profile Picture" class="profile-picture">
         <ul class="social-icons">
-          <li><a href="mailto:yentsai777@gmail.com"><i class="fas fa-envelope"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/jack-tsai-1033721a5/"><i class="fab fa-linkedin text-blue-700 text-2xl"></i></a></li>
-          <li><a href="https://github.com/yanzzzzzzzzz"><i class="fab fa-github"></i></a></li>
+          <li><a href="mailto:yentsai777@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+          <li><a href="https://www.linkedin.com/in/jack-tsai-1033721a5/" target="_blank"><i class="fab fa-linkedin text-blue-700 text-2xl"></i></a></li>
+          <li><a href="https://github.com/yanzzzzzzzzz"  target="_blank"><i class="fab fa-github"></i></a></li>
         </ul>
       </div>
     </div>
