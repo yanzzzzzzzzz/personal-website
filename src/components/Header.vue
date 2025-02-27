@@ -10,9 +10,7 @@
   </header>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 header {
@@ -22,12 +20,16 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
 }
 
 .nav-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .nav-item {
