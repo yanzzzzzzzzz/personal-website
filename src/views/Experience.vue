@@ -7,11 +7,20 @@
           <span class="text-blue-600">🏢</span>
         </div>
         <div>
-          <h2 class="text-xl font-semibold text-gray-800">{{ experience.title }}</h2>
-          <p class="text-gray-600">{{ experience.company }} | {{ experience.period }}</p>
-          <h3 class="text-lg font-medium text-gray-700 mt-2">Responsibilities include:</h3>
+          <h2 class="text-xl font-semibold text-gray-800">
+            {{ experience.title }}
+          </h2>
+          <p class="text-gray-600">
+            {{ experience.company }} | {{ experience.period }}
+          </p>
+          <h3 class="text-lg font-medium text-gray-700 mt-2">
+            Responsibilities include:
+          </h3>
           <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-            <li v-for="(responsibility, idx) in experience.responsibilities" :key="idx">
+            <li
+              v-for="(responsibility, idx) in experience.responsibilities"
+              :key="idx"
+            >
               {{ responsibility }}
             </li>
           </ul>
@@ -26,8 +35,12 @@
           <span class="text-blue-600">🎓</span>
         </div>
         <div>
-          <h2 class="text-xl font-semibold text-gray-800">{{ education.title }}</h2>
-          <p class="text-gray-600">{{ education.institution }} | {{ education.period }}</p>
+          <h2 class="text-xl font-semibold text-gray-800">
+            {{ education.title }}
+          </h2>
+          <p class="text-gray-600">
+            {{ education.institution }} | {{ education.period }}
+          </p>
           <p class="text-gray-600 mt-2">{{ education.description }}</p>
         </div>
       </div>
@@ -36,60 +49,57 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 interface Experience {
-  title: string
-  company: string
-  period: string
-  responsibilities: string[]
+  title: string;
+  company: string;
+  period: string;
+  responsibilities: string[];
 }
 
 interface Education {
-  title: string
-  institution: string
-  period: string
-  description: string
+  title: string;
+  institution: string;
+  period: string;
+  description: string;
 }
 
 const experiences = ref<Experience[]>([
   {
-    title: 'Senior Frontend Developer',
-    company: 'TechNova',
-    period: 'March 2022 - Present',
+    title: "Back-end Developer",
+    company: "Nexify Limited",
+    period: "March 2022 - Present",
     responsibilities: [
-      '開發和維護公司主網站，使用 Vue.js 和 Tailwind CSS',
-      '優化前端性能，提升頁面加載速度 30%',
-      '與後端團隊合作，實現 RESTful API 整合'
-    ]
+      "Developed APIs using C# (.NET 8) and Entity Framework with LINQ, optimizing database interactions and enabling multi-signature PDF functionality with DevExpress for accurate, streamlined business processes.",
+      "Designed dynamic form generation and processing (text replacement, table duplication, Word-to-PDF conversion, multi-PDF merging) to support legal and financial reporting requirements.",
+      "Enhanced frontend functionality using Vue 3 Composition API and PrimeVue, implementing pagination, lazy loading, and dynamic data processing to meet user needs.",
+      "Built CI/CD pipelines with Git, MS Build, and PowerShell, integrating Teams API for automated notifications and scheduling tasks to ensure reliable, continuous delivery.",
+      "Improved system stability by writing unit tests with MS Test, ensuring robust backend performance and deployment reliability.",
+    ],
   },
   {
-    title: 'Junior Web Developer',
-    company: 'WebSolutions Inc.',
-    period: 'June 2019 - February 2022',
+    title: "Software Engineer",
+    company: "YuanYu Group",
+    period: "May 2020 - September 2022",
     responsibilities: [
-      '參與公司內部工具的前端開發，使用 HTML、CSS 和 JavaScript',
-      '維護現有網站，修復 bug 並提升用戶體驗',
-      '學習並應用新技術如 TypeScript 和 Vue.js'
-    ]
-  }
-])
+      "Specialized in optical mechanical systems, motion control, computer vision, and GUI software, contributing to advanced system design and implementation.",
+      "Developed and optimized AOI visual inspection equipment, customizing software and hardware to meet specific client needs and improve efficiency.",
+      "Tested and validated visual inspection systems, ensuring peak performance and reliability for production environments.",
+      "Worked with cross-functional teams, delivering projects on schedule and within budget while meeting quality standards.",
+    ],
+  },
+]);
 
 const educations = ref<Education[]>([
   {
     title: "Master’s in Computer Science",
-    institution: 'National Taiwan University',
-    period: 'September 2016 - June 2019',
-    description: 'Thesis: "Optimizing Web Performance with Modern JavaScript Frameworks." Supervised by Prof. Chen Wei.'
+    institution: "National Chin-Yi University of Technology",
+    period: "2017 - 2019",
+    description:
+      'Thesis: "Goose Farm Egg Production Analysis System." Supervised by Prof. Shih-Yen Huang, Jzau-Sheng Lin',
   },
-  {
-    title: "Bachelor’s in Information Technology",
-    institution: 'National Cheng Kung University',
-    period: 'September 2012 - June 2016',
-    description: 'Focused on web development and software engineering. Graduated with honors.'
-  }
-])
+]);
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
