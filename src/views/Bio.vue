@@ -5,7 +5,7 @@
         <h1 class="text-5xl font-bold tracking-tight">👋 Hey, I’m Jack</h1>
         <h2 class="text-xl font-semibold pt-2">👨‍💻 A passionate backend developer from Taiwan</h2>
         <p class="py-2">
-          With a deep passion for backend development, I specialize in creating robust and scalable web applications. My expertise lies in modern web technologies, and I am currently contributing as a backend developer at XXX. I am eager to collaborate on innovative projects and continuously expand my skill set.
+          With a deep passion for backend development, I specialize in creating robust and scalable web applications. My expertise lies in modern web technologies, and I am currently contributing as a backend developer. I am eager to collaborate on innovative projects and continuously expand my skill set.
         </p>
         <h2 class="text-2xl font-semibold">📚 My Skills</h2>
         <ul class="list-disc list-inside">
