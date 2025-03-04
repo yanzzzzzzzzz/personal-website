@@ -13,8 +13,10 @@
           <p class="text-gray-600">
             {{ experience.company }} | {{ experience.period }}
           </p>
-          <h3 class="text-lg font-medium text-gray-700 mt-2">
-            Responsibilities include:
+          <h3 class="text-s font-medium text-gray-400 mt-2">
+            <span v-for="(skill, idx) in experience.skills" :key="idx" class="skill-capsule">
+              {{ skill }}
+            </span>
           </h3>
           <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
             <li
@@ -56,6 +58,7 @@ interface Experience {
   company: string;
   period: string;
   responsibilities: string[];
+  skills:string[];
 }
 
 interface Education {
@@ -77,6 +80,7 @@ const experiences = ref<Experience[]>([
       "Built CI/CD pipelines with Git, MS Build, and PowerShell, integrating Teams API for automated notifications and scheduling tasks to ensure reliable, continuous delivery.",
       "Improved system stability by writing unit tests with MS Test, ensuring robust backend performance and deployment reliability.",
     ],
+    skills:["C#",".NET 8","Entity Framework","LINQ","DevExpress","Vue 3 Composition API","PrimeVue","Git","MS Build","PowerShell","MS Test","CI/CD pipelines","Teams API","unit tests"],
   },
   {
     title: "Software Engineer",
@@ -88,6 +92,7 @@ const experiences = ref<Experience[]>([
       "Tested and validated visual inspection systems, ensuring peak performance and reliability for production environments.",
       "Worked with cross-functional teams, delivering projects on schedule and within budget while meeting quality standards.",
     ],
+    skills:["optical mechanical systems","motion control","computer vision","GUI software","AOI visual inspection equipment","cross-functional teams"],
   },
 ]);
 
@@ -102,4 +107,14 @@ const educations = ref<Education[]>([
 ]);
 </script>
 
-<style scoped></style>
+<style scoped>
+.skill-capsule {
+  display: inline-block;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 0.2rem 0.5rem;
+  margin: 0.2rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+</style>
