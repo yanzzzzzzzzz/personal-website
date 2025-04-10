@@ -5,29 +5,29 @@
  */
 
 // Plugins
-import { registerPlugins } from '@/plugins'
+import { registerPlugins } from '@/plugins';
 
 // Components
-import App from './App.vue'
+import App from './App.vue';
 
 // Composables
-import { createApp } from 'vue'
-import router from './router'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
-import 'vuetify/styles'
-import '@mdi/font/css/materialdesignicons.css'
+import { createApp } from 'vue';
+import router from './router';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
+import 'vuetify/styles';
+import '@mdi/font/css/materialdesignicons.css';
 
 const vuetify = createVuetify({
   components,
   directives,
-})
+});
 
-const app = createApp(App)
-app.use(router)
-app.use(vuetify)
+const app = createApp(App);
+app.use(router);
+app.use(vuetify);
 
-registerPlugins(app)
+registerPlugins(app);
 
-app.mount('#app')
+app.mount('#app');

@@ -1,4 +1,2 @@
-<template>
-  Blog
-</template>
+<template>Blog</template>
 <script setup lang="ts"></script>
