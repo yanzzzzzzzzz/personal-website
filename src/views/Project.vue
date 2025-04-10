@@ -1,30 +1,93 @@
 <template>
-  <div class="max-w-5xl mx-auto p-6">
-    <h1 class="text-3xl font-bold text-gray-800 mb-8">Projects</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div
+  <v-container>
+    <v-row>
+      <v-col 
+        class="text-center" 
+        cols="12"
+      >
+        <h1 class="text-h3 font-weight-bold mb-8">
+          My Projects
+        </h1>
+      </v-col>
+    </v-row>
+    
+    <v-row class="d-flex justify-center">
+      <v-col
         v-for="(project, index) in projects"
         :key="index"
-        class="bg-white shadow-md rounded-lg overflow-hidden cursor-pointer"
-        @click="goToDetail(project.id)"
+        cols="12"
+        sm="6"
+        md="4"
+        class="pa-2"
       >
-        <img :src="project.image" alt="Project Image" class="w-full h-48 object-contain">
-        <div class="p-4">
-          <h2 class="text-xl font-semibold text-gray-800">{{ project.name }}</h2>
-          <p class="text-gray-600 mt-2">{{ project.shortDescription }}</p>
-          <div class="mt-4">
-            <span
+        <v-card
+          class="mx-auto"
+          max-width="500"
+          height="100%"
+          hover
+          @click="goToDetail(project.id)"
+        >
+          <v-carousel
+            v-if="project.images && project.images.length > 0"
+            height="250"
+            hide-delimiters
+            show-arrows="hover"
+          >
+            <v-carousel-item
+              v-for="(image, imgIndex) in project.images"
+              :key="imgIndex"
+            >
+              <v-img
+                :src="image"
+                height="250"
+                contain
+                class="bg-grey-lighten-2"
+              />
+            </v-carousel-item>
+          </v-carousel>
+          <v-img
+            v-else
+            :src="project.image"
+            height="250"
+            contain
+            class="bg-grey-lighten-2"
+          />
+
+          <v-card-title class="text-h5 font-weight-bold">
+            {{ project.name }}
+          </v-card-title>
+
+          <v-card-text>
+            <div class="text-body-1 mb-4">
+              {{ project.shortDescription }}
+            </div>
+            
+            <v-chip
               v-for="(skill, idx) in project.skills"
               :key="idx"
-              class="skill-capsule"
+              class="ma-1"
+              color="primary"
+              variant="outlined"
+              size="small"
             >
               {{ skill }}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </v-chip>
+          </v-card-text>
+
+          <v-card-actions>
+            <v-spacer />
+            <v-btn
+              color="primary"
+              variant="text"
+              @click.stop="goToDetail(project.id)"
+            >
+              View Details
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script setup lang="ts">
@@ -37,6 +100,7 @@ interface Project {
   shortDescription: string;
   skills: string[];
   image: string;
+  images?: string[];
 }
 
 const projects = ref<Project[]>([
@@ -46,6 +110,11 @@ const projects = ref<Project[]>([
     shortDescription: 'An implementation of "Song, Yibing & Bao, Linchao & Xu, Xiaobin & Yang, Qingxiong. (2013). Decolorization: Is rgb2gray() out?. SIGGRAPH Asia 2013 Technical Briefs, SA "',
     skills: ['Python', 'gray-conversion'],
     image: 'images/Advanced-Color-to-Gray-Conversion.png',
+    images: [
+      'images/Advanced-Color-to-Gray-Conversion.png',
+      'images/Advanced-Color-to-Gray-Conversion-2.png',
+      'images/Advanced-Color-to-Gray-Conversion-3.png'
+    ]
   },
   {
     id: 2,
@@ -53,6 +122,11 @@ const projects = ref<Project[]>([
     shortDescription: 'An URL shortener',
     skills: ['Vue', 'TypeScript'],
     image: 'images/short-url.png',
+    images: [
+      'images/short-url.png',
+      'images/short-url-2.png',
+      'images/short-url-3.png'
+    ]
   },
   {
     id: 3,
@@ -60,6 +134,11 @@ const projects = ref<Project[]>([
     shortDescription: 'A system for analyzing egg production in a goose farm',
     skills: ['C#', 'Python', 'YOLO'],
     image: 'images/goose-farm.png',
+    images: [
+      'images/goose-farm.png',
+      'images/goose-farm-2.png',
+      'images/goose-farm-3.png'
+    ]
   },
   {
     id: 4,
@@ -67,6 +146,11 @@ const projects = ref<Project[]>([
     shortDescription: 'A panel detection algorithm development project',
     skills: ['MATLAB', 'image classification', 'Template Matching'],
     image: 'images/panel-detection.jpg',
+    images: [
+      'images/panel-detection.jpg',
+      'images/panel-detection-2.jpg',
+      'images/panel-detection-3.jpg'
+    ]
   },
   {
     id: 5,
@@ -74,6 +158,10 @@ const projects = ref<Project[]>([
     shortDescription: 'A hand rehabilitation game',
     skills: ['Unity', 'C#'],
     image: 'images/hand-rehabilitation-game.png',
+    images: [
+      'images/hand-rehabilitation-game.png',
+      'images/hand-rehabilitation-game-2.png'
+    ]
   },
   {
     id: 6,
@@ -81,6 +169,11 @@ const projects = ref<Project[]>([
     shortDescription: 'An indoor design project management system',
     skills: ['Vue', 'C#', 'MSSQL'],
     image: 'images/indoor-design-project-management-system.png',
+    images: [
+      'images/indoor-design-project-management-system.png',
+      'images/indoor-design-project-management-system-2.png',
+      'images/indoor-design-project-management-system-3.png'
+    ]
   }
 ]);
 
@@ -92,13 +185,25 @@ const goToDetail = (projectId: number) => {
 </script>
 
 <style scoped>
-.skill-capsule {
-  display: inline-block;
-  background-color: #e0f7fa;
-  color: #00796b;
-  padding: 0.2rem 0.5rem;
-  margin: 0.2rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
+.v-card {
+  transition: transform 0.3s ease;
+}
+
+.v-card:hover {
+  transform: translateY(-5px);
+}
+
+.v-col {
+  padding: 8px !important;
+}
+
+.v-carousel {
+  border-radius: 4px 4px 0 0;
+}
+
+.v-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
