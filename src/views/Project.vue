@@ -1,57 +1,25 @@
 <template>
   <v-container>
     <v-row>
-      <v-col
-        class="text-center"
-        cols="12"
-      >
-        <h1 class="text-h3 font-weight-bold mb-8">
-          My Projects
-        </h1>
+      <v-col class="text-center" cols="12">
+        <h1 class="text-h3 font-weight-bold mb-8">My Projects</h1>
       </v-col>
     </v-row>
 
     <v-row class="d-flex justify-center">
-      <v-col
-        v-for="(project, index) in projects"
-        :key="index"
-        cols="12"
-        sm="6"
-        md="4"
-        class="pa-2"
-      >
-        <v-card
-          class="mx-auto"
-          max-width="500"
-          height="100%"
-          hover
-          @click="goToDetail(project.id)"
-        >
+      <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" md="4" class="pa-2">
+        <v-card class="mx-auto" max-width="500" height="100%" hover @click="goToDetail(project.id)">
           <v-carousel
             v-if="project.images && project.images.length > 0"
             height="250"
             hide-delimiters
             show-arrows="hover"
           >
-            <v-carousel-item
-              v-for="(image, imgIndex) in project.images"
-              :key="imgIndex"
-            >
-              <v-img
-                :src="image"
-                height="250"
-                contain
-                class="bg-grey-lighten-2"
-              />
+            <v-carousel-item v-for="(image, imgIndex) in project.images" :key="imgIndex">
+              <v-img :src="image" height="250" contain class="bg-grey-lighten-2" />
             </v-carousel-item>
           </v-carousel>
-          <v-img
-            v-else
-            :src="project.image"
-            height="250"
-            contain
-            class="bg-grey-lighten-2"
-          />
+          <v-img v-else :src="project.image" height="250" contain class="bg-grey-lighten-2" />
 
           <v-card-title class="text-h5 font-weight-bold">
             {{ project.name }}
@@ -76,11 +44,7 @@
 
           <v-card-actions>
             <v-spacer />
-            <v-btn
-              color="primary"
-              variant="text"
-              @click.stop="goToDetail(project.id)"
-            >
+            <v-btn color="primary" variant="text" @click.stop="goToDetail(project.id)">
               View Details
             </v-btn>
           </v-card-actions>
@@ -91,16 +55,16 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
-  import { useRouter } from 'vue-router';
+  import { ref } from 'vue'
+  import { useRouter } from 'vue-router'
 
   interface Project {
-    id: number;
-    name: string;
-    shortDescription: string;
-    skills: string[];
-    image: string;
-    images?: string[];
+    id: number
+    name: string
+    shortDescription: string
+    skills: string[]
+    image: string
+    images?: string[]
   }
 
   const projects = ref<Project[]>([
@@ -165,13 +129,13 @@
         'images/indoor-design-project-management-system-3.png',
       ],
     },
-  ]);
+  ])
 
-  const router = useRouter();
+  const router = useRouter()
 
   const goToDetail = (projectId: number) => {
-    router.push({ name: 'ProjectDetail', params: { id: projectId } });
-  };
+    router.push({ name: 'ProjectDetail', params: { id: projectId } })
+  }
 </script>
 
 <style scoped>

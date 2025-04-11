@@ -2,21 +2,15 @@
   <div class="container">
     <div class="content">
       <div class="left">
-        <h1 class="text-5xl font-bold tracking-tight">
-          👋 Hey, I’m Jack
-        </h1>
-        <h2 class="text-xl font-semibold pt-2">
-          👨‍💻 A passionate backend developer from Taiwan
-        </h2>
+        <h1 class="text-5xl font-bold tracking-tight">👋 Hey, I’m Jack</h1>
+        <h2 class="text-xl font-semibold pt-2">👨‍💻 A passionate backend developer from Taiwan</h2>
         <p class="py-2">
           With a deep passion for backend development, I specialize in creating robust and scalable
           web applications. My expertise lies in modern web technologies, and I am currently
           contributing as a backend developer. I am eager to collaborate on innovative projects and
           continuously expand my skill set.
         </p>
-        <h2 class="text-2xl font-semibold">
-          📚 My Skills
-        </h2>
+        <h2 class="text-2xl font-semibold">📚 My Skills</h2>
         <ul class="list-disc list-inside">
           <li>C#</li>
           <li>Vue.js</li>
@@ -32,27 +26,22 @@
           src="https://avatars.githubusercontent.com/u/22338002?v=4"
           alt="Profile Picture"
           class="profile-picture"
-        >
+        />
         <ul class="social-icons">
           <li>
-            <a
-              href="mailto:yentsai777@gmail.com"
-              target="_blank"
-            >
+            <a href="mailto:yentsai777@gmail.com" target="_blank">
               <i class="fas fa-envelope" />
             </a>
           </li>
           <li>
-            <a
-              href="https://www.linkedin.com/in/jack-tsai-1033721a5/"
-              target="_blank"
-            ><i class="fab fa-linkedin text-blue-700 text-2xl" /></a>
+            <a href="https://www.linkedin.com/in/jack-tsai-1033721a5/" target="_blank">
+              <i class="fab fa-linkedin text-blue-700 text-2xl" />
+            </a>
           </li>
           <li>
-            <a
-              href="https://github.com/yanzzzzzzzzz"
-              target="_blank"
-            ><i class="fab fa-github" /></a>
+            <a href="https://github.com/yanzzzzzzzzz" target="_blank">
+              <i class="fab fa-github" />
+            </a>
           </li>
         </ul>
       </div>

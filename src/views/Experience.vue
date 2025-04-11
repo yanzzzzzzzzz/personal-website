@@ -1,13 +1,7 @@
 <template>
   <div class="max-w-3xl mx-auto p-6">
-    <h1 class="text-3xl font-bold text-gray-800 mb-8">
-      Experience
-    </h1>
-    <div
-      v-for="(experience, index) in experiences"
-      :key="index"
-      class="mb-8"
-    >
+    <h1 class="text-3xl font-bold text-gray-800 mb-8">Experience</h1>
+    <div v-for="(experience, index) in experiences" :key="index" class="mb-8">
       <div class="flex items-start gap-4">
         <div class="mt-1">
           <span class="text-blue-600">🏢</span>
@@ -16,23 +10,14 @@
           <h2 class="text-xl font-semibold text-gray-800">
             {{ experience.title }}
           </h2>
-          <p class="text-gray-600">
-            {{ experience.company }} | {{ experience.period }}
-          </p>
+          <p class="text-gray-600">{{ experience.company }} | {{ experience.period }}</p>
           <h3 class="text-s font-medium text-gray-400 mt-2">
-            <span
-              v-for="(skill, idx) in experience.skills"
-              :key="idx"
-              class="skill-capsule"
-            >
+            <span v-for="(skill, idx) in experience.skills" :key="idx" class="skill-capsule">
               {{ skill }}
             </span>
           </h3>
           <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
-            <li
-              v-for="(responsibility, idx) in experience.responsibilities"
-              :key="idx"
-            >
+            <li v-for="(responsibility, idx) in experience.responsibilities" :key="idx">
               {{ responsibility }}
             </li>
           </ul>
@@ -40,14 +25,8 @@
       </div>
     </div>
 
-    <h1 class="text-3xl font-bold text-gray-800 mb-8">
-      Education
-    </h1>
-    <div
-      v-for="(education, index) in educations"
-      :key="index"
-      class="mb-8"
-    >
+    <h1 class="text-3xl font-bold text-gray-800 mb-8">Education</h1>
+    <div v-for="(education, index) in educations" :key="index" class="mb-8">
       <div class="flex items-start gap-4">
         <div class="mt-1">
           <span class="text-blue-600">🎓</span>
@@ -56,9 +35,7 @@
           <h2 class="text-xl font-semibold text-gray-800">
             {{ education.title }}
           </h2>
-          <p class="text-gray-600">
-            {{ education.institution }} | {{ education.period }}
-          </p>
+          <p class="text-gray-600">{{ education.institution }} | {{ education.period }}</p>
           <p class="text-gray-600 mt-2">
             {{ education.description }}
           </p>
@@ -69,21 +46,21 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref } from 'vue'
 
   interface Experience {
-    title: string;
-    company: string;
-    period: string;
-    responsibilities: string[];
-    skills: string[];
+    title: string
+    company: string
+    period: string
+    responsibilities: string[]
+    skills: string[]
   }
 
   interface Education {
-    title: string;
-    institution: string;
-    period: string;
-    description: string;
+    title: string
+    institution: string
+    period: string
+    description: string
   }
 
   const experiences = ref<Experience[]>([
@@ -134,7 +111,7 @@
         'cross-functional teams',
       ],
     },
-  ]);
+  ])
 
   const educations = ref<Education[]>([
     {
@@ -144,7 +121,7 @@
       description:
         'Thesis: "Goose Farm Egg Production Analysis System." Supervised by Prof. Shih-Yen Huang, Jzau-Sheng Lin',
     },
-  ]);
+  ])
 </script>
 
 <style scoped>
