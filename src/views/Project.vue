@@ -9,17 +9,11 @@
     <v-row class="d-flex justify-center">
       <v-col v-for="(project, index) in projects" :key="index" cols="12" sm="6" md="4" class="pa-2">
         <v-card class="mx-auto" max-width="500" height="100%" hover @click="goToDetail(project.id)">
-          <v-carousel
-            v-if="project.images && project.images.length > 0"
-            height="250"
-            hide-delimiters
-            show-arrows="hover"
-          >
+          <v-carousel height="250" hide-delimiters show-arrows="hover">
             <v-carousel-item v-for="(image, imgIndex) in project.images" :key="imgIndex">
               <v-img :src="image" height="250" contain class="bg-grey-lighten-2" />
             </v-carousel-item>
           </v-carousel>
-          <v-img v-else :src="project.image" height="250" contain class="bg-grey-lighten-2" />
 
           <v-card-title class="text-h5 font-weight-bold">
             {{ project.name }}
@@ -63,8 +57,7 @@
     name: string
     shortDescription: string
     skills: string[]
-    image: string
-    images?: string[]
+    images: string[]
   }
 
   const projects = ref<Project[]>([
@@ -74,35 +67,27 @@
       shortDescription:
         'An implementation of "Song, Yibing & Bao, Linchao & Xu, Xiaobin & Yang, Qingxiong. (2013). Decolorization: Is rgb2gray() out?. SIGGRAPH Asia 2013 Technical Briefs, SA "',
       skills: ['Python', 'gray-conversion'],
-      image: 'images/Advanced-Color-to-Gray-Conversion.png',
-      images: [
-        'images/Advanced-Color-to-Gray-Conversion.png',
-        'images/Advanced-Color-to-Gray-Conversion-2.png',
-        'images/Advanced-Color-to-Gray-Conversion-3.png',
-      ],
+      images: ['images/Advanced-Color-to-Gray-Conversion.png'],
     },
     {
       id: 2,
       name: 'URL Shortener',
       shortDescription: 'An URL shortener',
       skills: ['Vue', 'TypeScript'],
-      image: 'images/short-url.png',
-      images: ['images/short-url.png', 'images/short-url-2.png', 'images/short-url-3.png'],
+      images: ['images/short-url.png'],
     },
     {
       id: 3,
       name: 'Goose Farm Egg Production Analysis System',
       shortDescription: 'A system for analyzing egg production in a goose farm',
       skills: ['C#', 'Python', 'YOLO'],
-      image: 'images/goose-farm.png',
-      images: ['images/goose-farm.png', 'images/goose-farm-2.png', 'images/goose-farm-3.png'],
+      images: ['images/goose-farm.png'],
     },
     {
       id: 4,
-      name: 'Panel Detection Algorithm Development',
-      shortDescription: 'A panel detection algorithm development project',
+      name: 'Panel Defect Detection System',
+      shortDescription: 'A panel defect detection system',
       skills: ['MATLAB', 'image classification', 'Template Matching'],
-      image: 'images/panel-detection.jpg',
       images: [
         'images/panel-detection.jpg',
         'images/panel-detection-2.jpg',
@@ -114,7 +99,6 @@
       name: 'Hand Rehabilitation Game',
       shortDescription: 'A hand rehabilitation game',
       skills: ['Unity', 'C#'],
-      image: 'images/hand-rehabilitation-game.png',
       images: ['images/hand-rehabilitation-game.png', 'images/hand-rehabilitation-game-2.png'],
     },
     {
@@ -122,12 +106,18 @@
       name: 'Indoor Design Project Management System',
       shortDescription: 'An indoor design project management system',
       skills: ['Vue', 'C#', 'MSSQL'],
-      image: 'images/indoor-design-project-management-system.png',
       images: [
         'images/indoor-design-project-management-system.png',
         'images/indoor-design-project-management-system-2.png',
         'images/indoor-design-project-management-system-3.png',
       ],
+    },
+    {
+      id: 7,
+      name: 'Wafer inspection system',
+      shortDescription: 'A Wafer inspection system',
+      skills: ['C#', 'Motion Control', 'Defect detection', 'SECS/GEM'],
+      images: ['images/Wafer-Inspection.jpg', 'images/Wafer-Inspection-1.jpg'],
     },
   ])
 
