@@ -58,68 +58,77 @@
     shortDescription: string
     skills: string[]
     images: string[]
+    periodFrom: Date
+    periodTo: Date
   }
 
-  const projects = ref<Project[]>([
-    {
-      id: 1,
-      name: 'Advanced-Color-to-Gray-Conversion',
-      shortDescription:
-        'An implementation of "Song, Yibing & Bao, Linchao & Xu, Xiaobin & Yang, Qingxiong. (2013). Decolorization: Is rgb2gray() out?. SIGGRAPH Asia 2013 Technical Briefs, SA "',
-      skills: ['Python', 'gray-conversion'],
-      images: ['images/Advanced-Color-to-Gray-Conversion.png'],
-    },
-    {
-      id: 2,
-      name: 'URL Shortener',
-      shortDescription: 'An URL shortener',
-      skills: ['Vue', 'TypeScript'],
-      images: ['images/short-url.png'],
-    },
-    {
-      id: 3,
-      name: 'Goose Farm Egg Production Analysis System',
-      shortDescription: 'A system for analyzing egg production in a goose farm',
-      skills: ['C#', 'Python', 'YOLO'],
-      images: ['images/goose-farm.png'],
-    },
-    {
-      id: 4,
-      name: 'Panel Defect Detection System',
-      shortDescription: 'A panel defect detection system',
-      skills: ['MATLAB', 'image classification', 'Template Matching'],
-      images: [
-        'images/panel-detection.jpg',
-        'images/panel-detection-2.jpg',
-        'images/panel-detection-3.jpg',
-      ],
-    },
-    {
-      id: 5,
-      name: 'Hand Rehabilitation Game',
-      shortDescription: 'A hand rehabilitation game',
-      skills: ['Unity', 'C#'],
-      images: ['images/hand-rehabilitation-game.png', 'images/hand-rehabilitation-game-2.png'],
-    },
-    {
-      id: 6,
-      name: 'Indoor Design Project Management System',
-      shortDescription: 'An indoor design project management system',
-      skills: ['Vue', 'C#', 'MSSQL'],
-      images: [
-        'images/indoor-design-project-management-system.png',
-        'images/indoor-design-project-management-system-2.png',
-        'images/indoor-design-project-management-system-3.png',
-      ],
-    },
-    {
-      id: 7,
-      name: 'Wafer inspection system',
-      shortDescription: 'A Wafer inspection system',
-      skills: ['C#', 'Motion Control', 'Defect detection', 'SECS/GEM'],
-      images: ['images/Wafer-Inspection.jpg', 'images/Wafer-Inspection-1.jpg'],
-    },
-  ])
+  const projects = ref<Project[]>(
+    [
+      {
+        id: 1,
+        name: 'Advanced-Color-to-Gray-Conversion',
+        shortDescription:
+          'An implementation of "Song, Yibing & Bao, Linchao & Xu, Xiaobin & Yang, Qingxiong. (2013). Decolorization: Is rgb2gray() out?. SIGGRAPH Asia 2013 Technical Briefs, SA "',
+        skills: ['Python', 'gray-conversion'],
+        images: ['images/Advanced-Color-to-Gray-Conversion.png'],
+        periodFrom: new Date(2020, 6),
+        periodTo: new Date(2020, 8),
+      },
+      {
+        id: 3,
+        name: 'Goose Farm Egg Production Analysis System',
+        shortDescription: 'A system for analyzing egg production in a goose farm',
+        skills: ['C#', 'Python', 'YOLO'],
+        images: ['images/goose-farm.png'],
+        periodFrom: new Date(2017, 6),
+        periodTo: new Date(2019, 8),
+      },
+      {
+        id: 4,
+        name: 'Panel Defect Detection System',
+        shortDescription: 'A panel defect detection system',
+        skills: ['MATLAB', 'image classification', 'Template Matching'],
+        images: [
+          'images/panel-detection.jpg',
+          'images/panel-detection-2.jpg',
+          'images/panel-detection-3.jpg',
+        ],
+        periodFrom: new Date(2017, 9),
+        periodTo: new Date(2018, 6),
+      },
+      {
+        id: 5,
+        name: 'Hand Rehabilitation Game',
+        shortDescription: 'A hand rehabilitation game',
+        skills: ['Unity', 'C#'],
+        images: ['images/hand-rehabilitation-game.png', 'images/hand-rehabilitation-game-2.png'],
+        periodFrom: new Date(2016, 9),
+        periodTo: new Date(2017, 6),
+      },
+      {
+        id: 6,
+        name: 'Indoor Design Project Management System',
+        shortDescription: 'An indoor design project management system',
+        skills: ['Vue', 'C#', 'MSSQL'],
+        images: [
+          'images/indoor-design-project-management-system.png',
+          'images/indoor-design-project-management-system-2.png',
+          'images/indoor-design-project-management-system-3.png',
+        ],
+        periodFrom: new Date(2023, 1),
+        periodTo: new Date(2023, 3),
+      },
+      {
+        id: 7,
+        name: 'Wafer inspection system',
+        shortDescription: 'A Wafer inspection system',
+        skills: ['C#', 'Motion Control', 'Defect detection', 'SECS/GEM'],
+        images: ['images/Wafer-Inspection.jpg', 'images/Wafer-Inspection-1.jpg'],
+        periodFrom: new Date(2020, 7),
+        periodTo: new Date(2022, 9),
+      },
+    ].sort((a, b) => b.periodFrom.getTime() - a.periodFrom.getTime())
+  )
 
   const router = useRouter()
 
