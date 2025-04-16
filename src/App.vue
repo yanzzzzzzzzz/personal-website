@@ -11,6 +11,7 @@
       <v-btn to="/blog" variant="text"> Blog </v-btn>
       <v-btn to="/experience" variant="text"> Experience </v-btn>
       <v-btn to="/project" variant="text"> Project </v-btn>
+      <v-btn to="/AIexplorer" variant="text"> AI Explorer </v-btn>
     </v-app-bar>
 
     <v-main>

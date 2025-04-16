@@ -10,6 +10,7 @@ import Bio from '../views/Bio.vue'
 import Blog from '../views/Blog.vue'
 import Experience from '../views/Experience.vue'
 import Project from '../views/Project.vue'
+import AIExplorer from '../views/AIexplorer.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +34,11 @@ const router = createRouter({
       path: '/project',
       name: 'project',
       component: Project,
+    },
+    {
+      path: '/AIexplorer',
+      name: 'AIexplorer',
+      component: AIExplorer,
     },
   ],
 })
