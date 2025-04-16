@@ -20,25 +20,25 @@
         class="ma-4"
         variant="tonal"
         color="primary"
-        @click="handleSubmitTemplatePrompt('Build a python game')"
+        @click="handleSubmitTemplatePrompt('Jack是誰')"
       >
-        <v-card-text>Build a python game</v-card-text>
+        <v-card-text>Jack是誰</v-card-text>
       </v-card>
       <v-card
         class="ma-4"
         variant="tonal"
         color="primary"
-        @click="handleSubmitTemplatePrompt('Help me write a manifesto')"
+        @click="handleSubmitTemplatePrompt('他擅長甚麼')"
       >
-        <v-card-text>Help me write a manifesto</v-card-text>
+        <v-card-text>他擅長甚麼</v-card-text>
       </v-card>
       <v-card
         class="ma-4"
         variant="tonal"
         color="primary"
-        @click="handleSubmitTemplatePrompt('Assist in a task')"
+        @click="handleSubmitTemplatePrompt('有甚麼作品')"
       >
-        <v-card-text>Assist in a task</v-card-text>
+        <v-card-text>有甚麼作品</v-card-text>
       </v-card>
       <v-spacer />
     </v-row>
@@ -88,7 +88,7 @@
     const currentMessageIndex = messages.value.length
     messages.value.push({ role: 'system', content: '' })
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL_PROD, {
+      const response = await fetch('https://my-ai-bio-worker.king840110.workers.dev', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

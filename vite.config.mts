@@ -50,17 +50,4 @@ export default defineConfig({
     },
   },
   base: '/personal-website/',
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://my-ai-bio-worker.king840110.workers.dev',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, ''),
-      },
-    },
-  },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-  },
 })
