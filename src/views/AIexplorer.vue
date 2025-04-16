@@ -88,7 +88,7 @@
     const currentMessageIndex = messages.value.length
     messages.value.push({ role: 'system', content: '' })
     try {
-      const response = await fetch('/api', {
+      const response = await fetch(import.meta.env.VITE_API_URL_PROD, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
