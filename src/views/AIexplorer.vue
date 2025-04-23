@@ -92,7 +92,6 @@
         role: msg.role === 'system' ? 'assistant' : 'user',
         content: msg.content,
       }))
-      console.log('conversationHistory', conversationHistory)
 
       const response = await fetch('https://my-ai-bio-worker.king840110.workers.dev', {
         method: 'POST',
