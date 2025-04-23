@@ -88,6 +88,12 @@
     const currentMessageIndex = messages.value.length
     messages.value.push({ role: 'system', content: '' })
     try {
+      const conversationHistory = messages.value.slice(0, -2).map(msg => ({
+        role: msg.role === 'system' ? 'assistant' : 'user',
+        content: msg.content,
+      }))
+      console.log('conversationHistory', conversationHistory)
+
       const response = await fetch('https://my-ai-bio-worker.king840110.workers.dev', {
         method: 'POST',
         headers: {
@@ -95,6 +101,7 @@
         },
         body: JSON.stringify({
           question: userMessage,
+          conversationHistory: conversationHistory,
         }),
       })
 
