@@ -1,5 +1,5 @@
-import pluginVue from 'eslint-plugin-vue';
-import vueTsEslintConfig from '@vue/eslint-config-typescript';
+import pluginVue from 'eslint-plugin-vue'
+import vueTsEslintConfig from '@vue/eslint-config-typescript'
 
 export default [
   {
@@ -25,8 +25,9 @@ export default [
         },
       ],
       'vue/multi-word-component-names': 'off',
-
+      'vue/singleline-html-element-content-newline': 'off',
       'vue/max-attributes-per-line': 'off',
+      'vue/html-self-closing': 'off',
     },
   },
-];
+]
