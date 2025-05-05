@@ -11,14 +11,8 @@
           continuously expand my skill set.
         </p>
         <h2 class="text-2xl font-semibold">📚 My Skills</h2>
-        <ul class="list-disc list-inside">
-          <li>C#</li>
-          <li>Vue.js</li>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>MSSQL</li>
-          <li>Git</li>
-          <li>RESTful APIs</li>
+        <ul v-for="(skill, index) in skills" :key="index" class="list-disc list-inside">
+          <li>{{ skill }}</li>
         </ul>
       </div>
       <div class="right">
@@ -49,7 +43,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const skills = ['C#', 'Vue.js', 'Node.js', 'MSSQL', 'Git', 'RESTful APIs']
+</script>
 
 <style scoped>
   .container {
@@ -107,5 +103,9 @@
 
   .contact-info i {
     margin-right: 0.5rem;
+  }
+  .list-disc {
+    padding: 10px;
+    margin: 0 16px;
   }
 </style>
