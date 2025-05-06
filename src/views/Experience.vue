@@ -16,7 +16,7 @@
               <div class="text-caption">{{ experience.period }}</div>
             </template>
 
-            <v-card class="mb-2" style="background-color: transparent">
+            <v-card class="mb-2 bg-transparent">
               <v-card-title class="text-h5">
                 {{ experience.title }}
               </v-card-title>
@@ -38,7 +38,7 @@
                   </v-chip>
                 </v-chip-group>
 
-                <v-list density="compact" class="mt-4 transparent">
+                <v-list density="compact" class="mt-4 bg-transparent">
                   <v-list-item
                     v-for="(responsibility, idx) in experience.responsibilities"
                     :key="idx"
@@ -190,5 +190,8 @@
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
+  }
+  .bg-transparent {
+    background-color: transparent;
   }
 </style>
