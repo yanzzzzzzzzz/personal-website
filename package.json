@@ -16,6 +16,7 @@
     "ci:check": "npm run lint:check && npm run format:check"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@mdi/font": "7.4.47",
     "core-js": "^3.37.1",
     "markdown-it": "^14.1.0",

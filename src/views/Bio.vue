@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content">
       <div class="left">
-        <h1 class="text-5xl font-bold tracking-tight">👋 Hey, I’m Jack</h1>
+        <h1 class="text-5xl font-bold tracking-tight">👋 Hey, I'm Jack</h1>
         <h2 class="text-xl font-semibold pt-2">👨‍💻 A passionate backend developer from Taiwan</h2>
         <p class="py-2">
           With a deep passion for backend development, I specialize in creating robust and scalable
@@ -11,7 +11,7 @@
           continuously expand my skill set.
         </p>
         <h2 class="text-2xl font-semibold">📚 My Skills</h2>
-        <ul v-for="(skill, index) in skills" :key="index" class="list-disc list-inside">
+        <ul v-for="(skill, index) in skills" :key="index" class="list-disc">
           <li>{{ skill }}</li>
         </ul>
       </div>
@@ -92,20 +92,32 @@
   }
 
   .social-icons a {
-    font-size: 1.5rem;
-    color: #333;
-    transition: color 0.3s;
+    font-size: 3rem;
+    color: #666;
+    transition: all 0.3s ease;
   }
 
   .social-icons a:hover {
-    color: #007bff;
+    transform: scale(1.1);
+  }
+
+  .social-icons .fa-envelope:hover {
+    color: #ea4335;
+  }
+
+  .social-icons .fa-linkedin:hover {
+    color: #0077b5;
+  }
+
+  .social-icons .fa-github:hover {
+    color: #333;
   }
 
   .contact-info i {
     margin-right: 0.5rem;
   }
   .list-disc {
-    padding: 10px;
-    margin: 0 16px;
+    list-style: disc;
+    margin-left: 1.5em;
   }
 </style>
