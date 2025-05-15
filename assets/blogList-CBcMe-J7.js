@@ -1,0 +1,1 @@
+import{_ as o,c as t,o as e,h as c}from"./index-DDt1crzL.js";const a={},l={class:"blog-posts"};function n(r,s){return e(),t("div",l,s[0]||(s[0]=[c("h1",{class:"text-2xl font-bold mb-6"},"blog list",-1)]))}const d=o(a,[["render",n],["__scopeId","data-v-6e2796c0"]]);export{d as default};
